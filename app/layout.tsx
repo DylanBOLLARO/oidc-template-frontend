@@ -1,3 +1,4 @@
+import { AuthProvider } from '@/components/contexts/auth-context'
 import { ThemeProvider } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
@@ -53,7 +54,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
+                    <AuthProvider>{children}</AuthProvider>
                 </ThemeProvider>
             </body>
         </html>
